@@ -80,8 +80,9 @@ export function showNotification(message) {
   const modal = document.getElementById("notification-modal");
   const notificationMessage = document.querySelector("#notification-modal p");
   notificationMessage.innerHTML = message;
-  modal.classList.remove("slide-in-right");
-  modal.classList.add("slide-in");
+
+  modal.classList.remove("translate-x-[120%]");
+  modal.classList.add("translate-x-[0%]");
 
   // Automatically hide after 2 seconds
   setTimeout(() => {
@@ -90,6 +91,6 @@ export function showNotification(message) {
 }
 export function hideNotification() {
   const modal = document.getElementById("notification-modal");
-  modal.classList.remove("slide-in");
-  modal.classList.add("slide-in-right");
+  modal.classList.add("translate-x-[120%]");
+  modal.classList.remove("translate-x-[0%]");
 }
