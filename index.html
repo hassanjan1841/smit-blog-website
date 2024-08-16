@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InkWave</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/e42725d427.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- desktop header -->
+    <header
+      class="hidden sm:block text-gray-400 bg-gray-900 body-font sticky top-0"
+    >
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          href="/"
+          class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+        >
+          <i class="fa-solid fa-signature"></i>
+          <span class="ml-3 text-xl">InkWave</span>
+        </a>
+        <nav
+          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a href="./blogs/index.html" class="mr-5 hover:text-white">Blogs</a>
+          <a href="./about-us/index.html" class="mr-5 hover:text-white"
+            >About Us</a
+          >
+          <a href="./contact-us/index.html" class="mr-5 hover:text-white"
+            >Contact Us</a
+          >
+        </nav>
+        <button
+          class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+          onclick="showLoginForm()"
+        >
+          Login / Signup
+        </button>
+      </div>
+    </header>
+
+    <!-- mobile header -->
+    <header class="sm:hidden text-gray-400 bg-gray-900 body-font sticky top-0">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between"
+      >
+        <a href="/" class="flex title-font font-medium items-center text-white">
+          <i class="fa-solid fa-signature"></i>
+          <span class="ml-3 text-xl">InkWave</span>
+        </a>
+        <span id="mobile-burger" class="hover:cursor-pointer">
+          <i class="fa-solid fa-bars text-white text-2xl"></i>
+        </span>
+        <div
+          class="hidden flex flex-col justify-start items-start h-screen fixed top-0 pt-20 pl-20 z-50 bg-gray-900 w-full left-0 gap-14"
+          id="mobile-nav"
+        >
+          <i
+            class="fa-solid fa-xmark absolute right-14 top-14 text-3xl hover:cursor-pointer"
+            id="close-mobile-nav"
+          ></i>
+          <nav
+            class="flex flex-col flex-wrap items-start text-base text-start justify-start gap-14"
+          >
+            <a href="./blogs/index.html" class="mr-5 hover:text-white text-5xl"
+              >Blogs</a
+            >
+            <a
+              href="./about-us/index.html"
+              class="mr-5 hover:text-white text-5xl"
+              >About Us</a
+            >
+            <a
+              href="./contact-us/index.html"
+              class="mr-5 hover:text-white text-5xl"
+              >Contact Us</a
+            >
+          </nav>
+          <button
+            class="inline-flex items-center bg-gray-800 border-0 py-4 px-8 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+            onclick="showLoginForm()"
+          >
+            <span class="text-3xl">Login / Signup</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Login Form -->
+    <div
+      id="login-form"
+      class="hidden flex justify-center items-center h-screen"
+    >
+      <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-white text-2xl font-medium title-font mb-4">Login</h2>
+        <form>
+          <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm text-white"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block mb-2 text-sm text-white"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-lg"
+          >
+            Login
+          </button>
+        </form>
+        <p class="mt-4 text-center text-white">
+          Don't have an account?
+          <button onclick="toggleForms()" class="text-gray-400 hover:underline">
+            Sign Up
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div
+      id="signup-form"
+      class="hidden flex justify-center items-center h-screen text-white w-full"
+    >
+      <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-[500px]">
+        <h2 class="text-white text-2xl font-medium title-font mb-4">Sign Up</h2>
+        <form>
+          <div class="mb-4 flex justify-between gap-4">
+            <div class="mb-4">
+              <label for="name" class="block mb-2 text-sm text-white"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email-signup" class="block mb-2 text-sm text-white"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email-signup"
+                class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+                placeholder="Enter your email"
+              />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="password-signup" class="block mb-2 text-sm text-white"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password-signup"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password-signup" class="block mb-2 text-sm text-white"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm-password-signup"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="category" class="block mb-2 text-sm"
+              >Select Blog Category</label
+            >
+            <select
+              id="category"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+            >
+              <option value="tech">Technology</option>
+              <option value="travel">Travel</option>
+              <option value="food">Food</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="health">Health</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="profession" class="block mb-2 text-sm"
+              >Select Profession</label
+            >
+            <select
+              id="profession"
+              class="w-full p-2 bg-gray-900 rounded border border-gray-700 focus:border-gray-500 focus:ring-2 focus:ring-gray-500 text-base outline-none text-gray-100 transition-colors duration-200 ease-in-out"
+            >
+              <option value="developer">Software Developer</option>
+              <option value="designer">Graphic Designer</option>
+              <option value="writer">Content Writer</option>
+              <option value="marketer">Digital Marketer</option>
+              <option value="teacher">Teacher</option>
+              <option value="engineer">Engineer</option>
+              <option value="doctor">Doctor</option>
+              <option value="photographer">Photographer</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-lg"
+          >
+            Sign Up
+          </button>
+        </form>
+        <p class="mt-4 text-center text-white">
+          Already have an account?
+          <button onclick="toggleForms()" class="text-gray-400 hover:underline">
+            Login
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function toggleForms() {
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        loginForm.classList.toggle("hidden");
+        signupForm.classList.toggle("hidden");
+      }
+      const mobileNav = document.getElementById("mobile-nav");
+
+      function showLoginForm() {
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+        mobileNav.classList.add("hidden");
+      }
+      const mobileBurger = document.getElementById("mobile-burger");
+      mobileBurger.addEventListener("click", () => {
+        mobileNav.classList.remove("hidden");
+      });
+      const closeMobileNav = document.getElementById("close-mobile-nav");
+      closeMobileNav.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
