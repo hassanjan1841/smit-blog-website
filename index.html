@@ -14,7 +14,7 @@
   <body>
     <!-- desktop header -->
     <header
-      class="hidden sm:block text-gray-400 bg-gray-900 body-font sticky top-0"
+      class="hidden sm:block text-gray-400 bg-gray-900 body-font sticky top-0 border-b border-b-gray-600"
     >
       <div
         class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
@@ -29,20 +29,27 @@
         <nav
           class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
         >
-          <a href="./blogs/index.html" class="mr-5 hover:text-white">Blogs</a>
-          <a href="./about-us/index.html" class="mr-5 hover:text-white"
+          <a href="/blogs/index.html" class="mr-5 hover:text-white">Blogs</a>
+          <a href="/about-us/index.html" class="mr-5 hover:text-white"
             >About Us</a
           >
-          <a href="./contact-us/index.html" class="mr-5 hover:text-white"
+          <a href="/contact-us/index.html" class="mr-5 hover:text-white"
             >Contact Us</a
           >
         </nav>
         <div class="flex justify-between items-center gap-3">
-          <button
-            class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 login-signup-button"
+          <a
+            href="/auth/login/index.html"
+            class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 login-button"
           >
-            Login / Signup
-          </button>
+            Login
+          </a>
+          <a
+            href="/auth/signup/index.html"
+            class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 signup-button"
+          >
+            Signup
+          </a>
           <button
             class="inline-flex items-center bg-red-500 text-black border-0 py-1 px-3 focus:outline-none hover:bg-red-600 hover:text-white rounded text-base mt-4 md:mt-0 logout-btn"
           >
@@ -53,7 +60,9 @@
     </header>
 
     <!-- mobile header -->
-    <header class="sm:hidden text-gray-400 bg-gray-900 body-font sticky top-0">
+    <header
+      class="sm:hidden text-gray-400 bg-gray-900 body-font sticky top-0 border-b border-b-gray-600"
+    >
       <div
         class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between"
       >
@@ -75,27 +84,34 @@
           <nav
             class="flex flex-col flex-wrap items-start text-base text-start justify-start gap-14"
           >
-            <a href="./blogs/index.html" class="mr-5 hover:text-white text-5xl"
+            <a href="/blogs/index.html" class="mr-5 hover:text-white text-3xl"
               >Blogs</a
             >
             <a
-              href="./about-us/index.html"
-              class="mr-5 hover:text-white text-5xl"
+              href="/about-us/index.html"
+              class="mr-5 hover:text-white text-3xl"
               >About Us</a
             >
             <a
-              href="./contact-us/index.html"
-              class="mr-5 hover:text-white text-5xl"
+              href="/contact-us/index.html"
+              class="mr-5 hover:text-white text-3xl"
               >Contact Us</a
             >
           </nav>
-          <button
-            class="inline-flex items-center bg-gray-800 border-0 py-4 px-8 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 login-signup-button"
+          <a
+            href="/auth/login/index.html"
+            class="inline-flex items-center bg-gray-800 border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded text-base login-button"
           >
-            <span class="text-3xl">Login / Signup</span>
-          </button>
+            <span class="text-3xl">Login</span>
+          </a>
+          <a
+            href="/auth/signup/index.html"
+            class="inline-flex items-center bg-gray-800 border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded text-base signup-button"
+          >
+            <span class="text-3xl">Signup</span>
+          </a>
           <button
-            class="inline-flex items-center text-black bg-red-400 border-0 py-4 px-8 focus:outline-none hover:bg-red-700 hover:text-white rounded text-base mt-4 md:mt-0 logout-btn"
+            class="inline-flex items-center text-black bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-700 hover:text-white rounded text-base logout-btn"
           >
             <span class="text-3xl">Logout</span>
           </button>
