@@ -1,3 +1,8 @@
+import { closeMobileNavFunc, showMobileNavFunc } from "../../utils.js";
+
+showMobileNavFunc();
+closeMobileNavFunc();
+
 signupForm.addEventListener("submit", (e) => {
   e.preventDefault();
   e.target[6].innerHTML =

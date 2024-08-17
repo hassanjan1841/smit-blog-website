@@ -1,9 +1,4 @@
-import {
-  closeMobileNavFunc,
-  loginSignupBtnRun,
-  showMobileNavFunc,
-} from "../utils.js";
+import { closeMobileNavFunc, showMobileNavFunc } from "../utils.js";
 
 showMobileNavFunc();
 closeMobileNavFunc();
-loginSignupBtnRun();

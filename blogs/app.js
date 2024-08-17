@@ -1,9 +1,7 @@
-import {
-  closeMobileNavFunc,
-  loginSignupBtnRun,
-  showMobileNavFunc,
-} from "../utils.js";
+import { closeMobileNavFunc, showMobileNavFunc, showPosts } from "../utils.js";
 
 showMobileNavFunc();
 closeMobileNavFunc();
-loginSignupBtnRun();
+
+const allBlogPosts = document.getElementById("all-blogs");
+showPosts(allBlogPosts);

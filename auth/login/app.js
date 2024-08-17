@@ -1,3 +1,8 @@
+import { closeMobileNavFunc, showMobileNavFunc } from "../../utils.js";
+
+showMobileNavFunc();
+closeMobileNavFunc();
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   e.target[2].innerHTML =
